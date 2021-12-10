@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: ./videoshare-reverseproxy
+    image: reverseproxy
+  backend_user:
+    build:
+      context: ./videoshare-api-user
+    image: videoshare-api-user
+  backend_feed:
+    build:
+      context: ./videoshare-api-feed
+    image: videoshare-api-feed
+  frontend:
+    build:
+      context: ./videoshare-frontend
+    image: videoshare-frontend:local
